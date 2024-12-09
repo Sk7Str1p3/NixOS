@@ -79,12 +79,9 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    iwd
-    sddm
     libreoffice
     fish
     ntfs3g
-    xwayland
     polkit_gnome
     nautilus
     gparted
@@ -93,9 +90,7 @@
     ripgrep
     binutils
     cryptsetup
-    git
     file-roller
-    brightnessctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
