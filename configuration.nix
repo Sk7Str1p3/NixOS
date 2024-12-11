@@ -3,9 +3,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./boot.nix
     ./network.nix
     ./graphics.nix
+    ./boot
   ];
 
   # Set your time zone.
