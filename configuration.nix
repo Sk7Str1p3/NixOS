@@ -2,7 +2,7 @@
 {pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware
     ./network.nix
     ./graphics.nix
     ./boot
@@ -115,7 +115,6 @@
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   system.stateVersion = "24.05"; # DO NOOOOOT CHANGE THIS!!!! NEVER!!!!
 }

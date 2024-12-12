@@ -44,6 +44,7 @@
           cp -r ./theme "$out"
           runHook postInstall'';
       };
+      extraGrubInstallArgs = ["--disable-shim-lock"];
       extraInstallCommands = ''
         cd /boot/theme
         ${pkgs.imagemagick}/bin/magick /sys/firmware/acpi/bgrt/image PNG24:./bgrt.png

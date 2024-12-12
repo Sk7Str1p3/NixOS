@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -12,12 +11,9 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
   boot.initrd.luks.devices = {
     NixOS.device = "/dev/nvme0n1p2";
   };
-  boot.extraModulePackages = [];
 
   environment.etc."crypttab".text = ''
     HDD    	/dev/disk/by-partuuid/0b959419-c80e-41b7-b298-d666073d0a4f 	/etc/cryptsetup-keys.d/HDD.bek 		bitlk,nofail
