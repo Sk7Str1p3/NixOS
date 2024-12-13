@@ -8,21 +8,9 @@
 {pkgs, ...}: {
   # Enable X11
   services.xserver.videoDrivers = ["nvidia"];
-  /*
-    services.xserver = {
-    enable = true;
-    videoDrivers = ["nvidia"];
-  };
-  */
-  # Enabling DE/WM/DM
-  services.displayManager = {
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-  };
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
 }

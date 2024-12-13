@@ -7,6 +7,7 @@
     ./graphics.nix
     ./boot
     ./graphics
+    ./network
   ];
 
   # Set your time zone.

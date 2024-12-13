@@ -1,20 +1,24 @@
 {pkgs, ...}: {
-  services.displayManager = {
-    defaultSession = "Hyprland";
-    sddm = {
-      enable = true;
-      package = pkgs.kdePackages.sddm;
-      wayland = {
+  config = {
+    services.displayManager = {
+      # defaultSession = "hyprland";
+      sddm = {
         enable = true;
-        compositor = "weston";
+        package = pkgs.kdePackages.sddm;
+        wayland = {
+          enable = true;
+          compositor = "weston";
+        };
+        theme = "catppuccin-mocha";
       };
-      theme = pkgs.catppuccin-sddm.override {
+    };
+    environment.systemPackages = [
+      (pkgs.catppuccin-sddm.override {
         flavor = "mocha";
         font = "JetBrainsMono Nerd Font Propo";
         fontSize = "12";
-        background = "${./wallpaper.png}";
         loginBackground = true;
-      };
-    };
+      })
+    ];
   };
 }
