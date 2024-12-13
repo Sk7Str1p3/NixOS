@@ -1,9 +1,6 @@
 {
   hardware.nvidia = {
-    powerManagement = {
-      enable = true;
-      finegrained = true;
-    };
+    powerManagement.enable = true;
     open = true;
     nvidiaSettings = true;
     nvidiaPersistenced = true;
