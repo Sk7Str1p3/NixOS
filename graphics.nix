@@ -7,10 +7,13 @@
 # Determine functions
 {pkgs, ...}: {
   # Enable X11
-  services.xserver = {
+  services.xserver.videoDrivers = ["nvidia"];
+  /*
+    services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
   };
+  */
   # Enabling DE/WM/DM
   services.displayManager = {
     sddm = {

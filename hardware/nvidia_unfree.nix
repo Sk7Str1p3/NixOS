@@ -6,6 +6,5 @@
     nvidiaPersistenced = true;
     modesetting.enable = true;
     forceFullCompositionPipeline = true;
-    dynamicBoost.enable = true;
   };
 }
