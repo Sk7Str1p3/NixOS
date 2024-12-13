@@ -11,10 +11,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.luks.devices = {
-    NixOS.device = "/dev/nvme0n1p2";
-  };
-
   environment.etc."crypttab".text = ''
     HDD    	/dev/disk/by-partuuid/0b959419-c80e-41b7-b298-d666073d0a4f 	/etc/cryptsetup-keys.d/HDD.bek 		bitlk,nofail
     WinWare	/dev/disk/by-partuuid/74e675f3-4eb2-4075-a56c-413091ce48bd	/etc/cryptsetup-keys.d/WinWare.bek	bitlk

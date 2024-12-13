@@ -29,14 +29,6 @@
         libva
       ];
     };
-    nvidia = {
-      modesetting.enable = true;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-      forceFullCompositionPipeline = true;
-      powerManagement.enable = true;
-    };
   };
   # Enabling DE/WM/DM
   services.displayManager = {
