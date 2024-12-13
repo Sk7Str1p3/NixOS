@@ -5,30 +5,11 @@
 #  \____|_|  \__,_| .__/|_| |_|_|\___\__,_|_|     \___|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|
 #                 |_|
 # Determine functions
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Enable X11
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-  };
-  # configuring nvidia
-  hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        libva
-      ];
-    };
   };
   # Enabling DE/WM/DM
   services.displayManager = {
