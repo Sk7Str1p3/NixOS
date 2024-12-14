@@ -8,6 +8,7 @@
     ./boot
     ./graphics
     ./network
+    ./virtualisation
   ];
 
   # Set your time zone.
