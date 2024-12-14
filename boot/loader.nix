@@ -24,6 +24,7 @@
           }
         }
       '';
+      extraPerEntryConfig = "--unrestricted";
       default = 5;
       theme = pkgs.stdenv.mkDerivation {
         pname = "grub-bgrt";

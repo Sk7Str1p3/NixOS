@@ -1,14 +1,13 @@
 # Your NixOS configuration. Here's the structure:
 {pkgs, ...}: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware
     ./network.nix
-    ./graphics.nix
     ./boot
     ./graphics
     ./network
     ./virtualisation
+    ./services
   ];
 
   # Set your time zone.
@@ -61,16 +60,6 @@
     pulse.enable = true;
   };
 
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      swtpm.enable = true;
-      package = pkgs.qemu_kvm;
-    };
-  };
-  programs.virt-manager.enable = true;
-
-  services.gvfs.enable = true;
   services.openssh.enable = true;
   services.udisks2.enable = true;
   programs.fish.enable = true;

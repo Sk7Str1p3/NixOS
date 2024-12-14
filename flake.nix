@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    inputs.agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
@@ -16,7 +17,8 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix # Your system configuration.
-          chaotic.nixosModules.default # OUR DEFAULT MODULE
+          chaotic.nixosModules.default
+          agenix.nixosModules.default
         ];
       };
     };

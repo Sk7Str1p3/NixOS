@@ -1,5 +1,5 @@
 {
   imports = [
-    ./libvirt.nix
+    ./gnome.nix
   ];
 }
