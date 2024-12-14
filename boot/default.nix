@@ -1,6 +1,6 @@
 {
   imports = [
-    ./loader_grub.nix # uncomment if you wish use grub
+    ./loader.nix
     ./kernel.nix
     ./initrd.nix
     ./plymouth.nix

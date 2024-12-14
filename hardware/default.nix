@@ -1,7 +1,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./nvidia_unfree.nix
+    ./nvidia.nix
     ./graphics.nix
+    ./cpu.nix
   ];
 }
