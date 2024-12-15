@@ -79,10 +79,12 @@
     gparted
     nixd
     wl-clipboard
+    sbctl
     ripgrep
     binutils
     cryptsetup
     file-roller
+    sbctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

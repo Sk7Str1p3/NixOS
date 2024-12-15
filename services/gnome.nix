@@ -4,7 +4,7 @@
     udisks2.enable = true;
     gnome.gnome-keyring.enable = true;
     udev.packages = [
-      pkgs.gnome.gnome-settings-daemon
+      pkgs.gnome-settings-daemon
     ];
   };
 }

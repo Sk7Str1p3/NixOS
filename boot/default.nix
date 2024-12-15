@@ -1,6 +1,6 @@
 {
   imports = [
-    ./loader.nix
+    ./lanzaboot.nix
     ./kernel.nix
     ./initrd.nix
     ./plymouth.nix
