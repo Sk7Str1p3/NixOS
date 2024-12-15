@@ -5,6 +5,7 @@
   ...
 }: {
   boot.loader = {
+    generationsDir.enable = true;
     grub = {
       enable = true;
       devices = ["nodev"];

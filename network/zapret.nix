@@ -7,6 +7,7 @@
     ];
     blacklist = [
       "gosuslugi.ru"
+      "russmo.getcourse.ru"
     ];
   };
 }
