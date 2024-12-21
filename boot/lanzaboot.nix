@@ -1,5 +1,12 @@
 {lib, ...}: {
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.loader.systemd-boot = {
+    enable = lib.mkForce false;
+    memtest86.enable = true;
+    edk2-uefi-shell.enable = true;
+    netbootxyz.enable = true;
+    editor = false;
+    consoleMode = "max";
+  };
 
   boot.lanzaboote = {
     enable = true;
