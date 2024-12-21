@@ -50,7 +50,6 @@
   };
   services.gnome = {
     gnome-keyring.enable = true;
-    seahorse.enable = true;
     sushi.enable = true;
   };
   programs.seahorse.enable = true;
