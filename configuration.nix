@@ -28,7 +28,7 @@
       "flakes"
     ];
   };
-
+  security.pam.services.sddm.enableGnomeKeyring = true;
   security.polkit = {
     enable = true;
     extraConfig = ''
@@ -48,8 +48,11 @@
          });
     '';
   };
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
+  services.gnome = {
+    gnome-keyring.enable = true;
+    seahorse.enable = true;
+    sushi.enable = true;
+  };
   programs.seahorse.enable = true;
   services.ollama = {
     enable = true;
@@ -67,7 +70,7 @@
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = ["wheel"];
-packages = with pkgs; [kitty home-manager];
+    packages = with pkgs; [kitty home-manager];
   };
 
   environment.systemPackages = with pkgs; [
