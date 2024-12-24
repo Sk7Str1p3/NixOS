@@ -2,7 +2,7 @@
   description = "My configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     agenix.url = "github:ryantm/agenix";
     lanzaboote = {

@@ -15,11 +15,6 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-        inherit pkgs;
-      };
-    };
   };
 
   nix.settings = {
@@ -28,7 +23,9 @@
       "flakes"
     ];
   };
-  security.pam.services.sddm.enableGnomeKeyring = true;
+  security.pam.services = {
+    SDDM.enableGnomeKeyring = true;
+  };
   security.polkit = {
     enable = true;
     extraConfig = ''

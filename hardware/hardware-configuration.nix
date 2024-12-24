@@ -43,20 +43,20 @@
     options = ["fmask=0022" "dmask=0022"];
   };
 
-  fileSystems."/home/Sk7Str1p3/HDD" = {
+  fileSystems."/media/HDD" = {
     device = "/dev/mapper/HDD";
     fsType = "ntfs";
     options = ["nofail"];
   };
-  fileSystems."/home/Sk7Str1p3/Windows" = {
+  fileSystems."/media/Windows" = {
     device = "/dev/mapper/Windows";
     fsType = "ntfs";
   };
-  fileSystems."/home/Sk7Str1p3/WinWare" = {
+  fileSystems."/media/WinWare" = {
     device = "/dev/mapper/WinWare";
     fsType = "ntfs";
   };
-  fileSystems."/home/Sk7Str1p3/LinuxWare" = {
+  fileSystems."/media/LinuxWare" = {
     device = "/dev/mapper/RaidNVME";
     fsType = "btrfs";
     options = ["compress=zstd" "subvol=@"];
