@@ -1,6 +1,5 @@
 {
-  security.sudo.enable = false;
-  security.sudo-rs = {
+  security.sudo = {
     enable = true;
     execWheelOnly = true;
     wheelNeedsPassword = false;

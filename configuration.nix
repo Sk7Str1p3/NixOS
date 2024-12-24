@@ -25,9 +25,6 @@
     ];
   };
 
-  services.gnome = {
-    sushi.enable = true;
-  };
   programs.seahorse.enable = true;
   services.ollama = {
     enable = true;
@@ -39,13 +36,15 @@
   };
 
   services.openssh.enable = true;
-  services.udisks2.enable = true;
   programs.fish.enable = true;
   users.users.Sk7Str1p3 = {
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = ["wheel"];
-    packages = with pkgs; [kitty home-manager];
+    packages = with pkgs; [
+      kitty
+      home-manager
+    ];
   };
 
   environment.systemPackages = with pkgs; [
