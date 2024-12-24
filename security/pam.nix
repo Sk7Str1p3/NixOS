@@ -7,7 +7,6 @@
       };
     };
     sshAgentAuth.enable = true;
-    oath.enable = true;
     mount = {
       enable = true;
       logoutWait = 100;

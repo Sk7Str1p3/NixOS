@@ -8,6 +8,7 @@
     ./network
     ./virtualisation
     ./services
+    ./security
   ];
 
   # Set your time zone.
@@ -22,9 +23,6 @@
       "nix-command"
       "flakes"
     ];
-  };
-  security.pam.services = {
-    SDDM.enableGnomeKeyring = true;
   };
   security.polkit = {
     enable = true;
