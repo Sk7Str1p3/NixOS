@@ -9,6 +9,7 @@
     ./virtualisation
     ./services
     ./security
+    ./nix
   ];
 
   # Set your time zone.
