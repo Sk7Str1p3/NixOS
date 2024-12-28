@@ -3,7 +3,6 @@
     enable = true;
     package = pkgs.nixVersions.latest;
     settings = {
-      use-sandbox = true;
       show-trace = true;
       allowed-users = [
         "*"
