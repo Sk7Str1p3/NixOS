@@ -11,6 +11,7 @@
       "rutube.ru"
       "reddit.com"
       "nixos.org"
+      "habr.com"
     ];
   };
 }

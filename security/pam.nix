@@ -6,7 +6,7 @@
         startSession = true;
       };
     };
-    sshAgentAuth.enable = true;
+    # sshAgentAuth.enable = true;
     mount = {
       enable = true;
       logoutWait = 100;
