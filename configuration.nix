@@ -80,6 +80,7 @@
   };
 
   services.fwupd.enable = true;
+  services.flatpak.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
