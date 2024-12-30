@@ -16,6 +16,10 @@
       sandbox-paths = ["/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox"];
     };
     optimise.automatic = true;
-    gc.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "22:00";
+      options = "--delete-older-than 3d";
+    };
   };
 }

@@ -8,5 +8,5 @@
     ./apparmor.nix
   ];
 
-  security.protectKernelImage = true;
+  #security.protectKernelImage = true;
 }

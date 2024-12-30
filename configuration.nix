@@ -65,6 +65,10 @@
     file-roller
     sbctl
     git
+    (ventoy.override {
+      defaultGuiType = "gtk3";
+      withGtk3 = true;
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -75,6 +79,7 @@
     enableSSHSupport = true;
   };
 
+  services.fwupd.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
