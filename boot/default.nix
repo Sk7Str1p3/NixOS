@@ -5,17 +5,20 @@
     ./kernel.nix
     ./initrd.nix
     ./plymouth.nix
-    ./bimfmt.nix
+    ./binfmt.nix
+    ./crashDump.nix
   ];
 
-  boot.consoleLogLevel = 0;
-  boot.enableContainers = true;
-  boot.growPartition = true;
-  boot.hardwareScan = true;
-  boot.supportedFilesystems = {
-    btrfs = true;
-    zfs = false;
-    ntfs = true;
-    fat = true;
+  boot = {
+    consoleLogLevel = 0;
+    enableContainers = true;
+    growPartition = true;
+    hardwareScan = true;
+    supportedFilesystems = {
+      btrfs = true;
+      zfs = false;
+      ntfs = true;
+      fat = true;
+    };
   };
 }
