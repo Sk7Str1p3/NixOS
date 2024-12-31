@@ -1,5 +1,5 @@
 {
   imports = [
-    ./manager.nix
+    ./managers
   ];
 }

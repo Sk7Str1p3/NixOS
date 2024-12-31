@@ -15,7 +15,10 @@
       ];
       sandbox-paths = ["/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox"];
     };
-    optimise.automatic = true;
+    optimise = {
+      automatic = true;
+      dates = "22:00";
+    };
     gc = {
       automatic = true;
       dates = "22:00";
