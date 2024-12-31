@@ -9,7 +9,7 @@
     ./virtualisation
     ./services
     ./security
-    ./nix
+    ./packages
   ];
 
   # Set your time zone.

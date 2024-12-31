@@ -9,6 +9,7 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
@@ -16,6 +17,7 @@
     chaotic,
     agenix,
     lanzaboote,
+    nix-flatpak,
     ...
   }: {
     nixosConfigurations = {
@@ -26,6 +28,7 @@
           chaotic.nixosModules.default
           agenix.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };
