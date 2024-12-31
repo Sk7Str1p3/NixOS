@@ -9,7 +9,7 @@
     ./virtualisation
     ./services
     ./security
-    ./packages
+    ./programs
   ];
 
   # Set your time zone.
