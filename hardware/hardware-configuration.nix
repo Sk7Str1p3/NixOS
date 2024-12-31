@@ -37,7 +37,7 @@
     options = ["subvol=@swap" "compress=zstd"];
   };
 
-  fileSystems."/boot" = {
+  fileSystems."/efi" = {
     device = "/dev/disk/by-uuid/B121-36EC";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];

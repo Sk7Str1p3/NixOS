@@ -11,7 +11,6 @@
       "btrfs"
     ];
     includeDefaultModules = true;
-    preFailCommands = "plymouth --quit";
     verbose = false;
     systemd = {
       enable = true;
@@ -41,12 +40,3 @@
     };
   };
 }
-/*
-supportedFilesystems = {
-      btrfs = true;
-      zfs = false;
-      ntfs = true;
-      fat = true;
-    };
-*/
-
