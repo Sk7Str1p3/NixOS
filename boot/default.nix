@@ -5,7 +5,7 @@
     ./kernel.nix
     ./initrd.nix
     ./plymouth.nix
-    ./binfmt.nix
+    #./binfmt.nix
     ./crashDump.nix
   ];
 

@@ -36,10 +36,12 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   services.openssh.enable = true;
   programs.fish.enable = true;
+  programs.obs-studio.enable = true;
   users.users.Sk7Str1p3 = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -61,6 +63,7 @@
     nixd
     wl-clipboard
     sbctl
+    pkgsi686Linux.gnutls
     ripgrep
     binutils
     cryptsetup
