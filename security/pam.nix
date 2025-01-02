@@ -3,7 +3,7 @@
     services = {
       SDDM = {
         enableGnomeKeyring = true;
-        startSession = true;
+        #startSession = true;
       };
     };
     # sshAgentAuth.enable = true;

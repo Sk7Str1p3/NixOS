@@ -1,11 +1,11 @@
 {
   imports = [
     ./loader.nix
-    #./loader_grub.nix
+    # ./loader_grub.nix
     ./kernel.nix
     ./initrd.nix
     ./plymouth.nix
-    #./binfmt.nix
+    ./binfmt.nix
     ./crashDump.nix
   ];
 
