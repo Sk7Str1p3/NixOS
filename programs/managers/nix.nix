@@ -2,31 +2,47 @@
   nix = {
     enable = true;
     package = pkgs.nixVersions.latest;
-    settings = {
-      show-trace = true;
-      allowed-users = [
-        "*"
-      ];
-      auto-optimise-store = true;
-      cores = 8;
-      trusted-users = [
-        "root"
-        "@wheel"
-      ];
-      sandbox-paths = ["/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox"];
+
+    channel.enable = true;
+    gc = {
+      automatic = true;
+      dates = "22:00";
+      options = "--delete-older-than 3d";
+      persistent = true;
+      randomizedDelaySec = "0";
     };
     optimise = {
       automatic = true;
+      persistent = true;
+      randomizedDelaySec = "0";
       dates = [
         "06:00"
         "18:00"
         "22:00"
       ];
     };
-    gc = {
-      automatic = true;
-      dates = "22:00";
-      options = "--delete-older-than 3d";
+
+    settings = {
+      allowed-users = [
+        "*"
+      ];
+      auto-optimise-store = true;
+      cores = 0;
+      extra-sandbox-paths = [];
+      max-jobs = "auto";
+      require-sigs = true;
+      sandbox = true;
+      show-trace = true;
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
+  };
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 }

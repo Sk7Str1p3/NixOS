@@ -13,19 +13,13 @@
   ];
 
   appstream.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
   nixpkgs.config = {
     allowUnfree = true;
-  };
-
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
   };
 
   programs.seahorse.enable = true;
@@ -100,5 +94,5 @@
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
 
-  system.stateVersion = "24.05"; # DO NOOOOOT CHANGE THIS!!!! NEVER!!!!
+  system.stateVersion = "25.05"; # DO NOOOOOT CHANGE THIS!!!! NEVER!!!!
 }
