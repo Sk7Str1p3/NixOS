@@ -2,24 +2,20 @@
   boot = {
     lanzaboote = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      pkiBundle = "/var/lib/sbctl";
     };
     loader = {
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
+        efiSysMountPoint = "/boot/efi";
       };
       systemd-boot = {
         enable = lib.mkForce false;
+        #enable = true;
         configurationLimit = 20;
         consoleMode = "max";
         editor = false;
       };
-      generationsDir = {
-        enable = false;
-        copyKernels = true;
-      };
-      initScript.enable = false;
       timeout = 2;
     };
   };
