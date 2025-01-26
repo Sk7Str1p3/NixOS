@@ -5,10 +5,10 @@
     ];
     resumeDevice = "/dev/mapper/NixOS";
     kernelParams = [
-      "resume_offset=7876239"
+      "resume_offset=13183565"
       "quiet"
       "splash"
     ];
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    #kernelPackages = pkgs.linux;
   };
 }
