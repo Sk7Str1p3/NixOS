@@ -1,24 +1,17 @@
 {
   imports = [
-    ./loader.nix
-    # ./loader_grub.nix
-    ./kernel.nix
-    ./initrd.nix
-    ./plymouth.nix
-    ./binfmt.nix
+    ./bootspec.nix
     ./crashDump.nix
+    ./initrd.nix
+    ./kernel.nix
+    ./loader.nix
+    ./plymouth.nix
   ];
 
   boot = {
-    consoleLogLevel = 0;
+    consoleLogLevel = 4;
     enableContainers = true;
     growPartition = true;
     hardwareScan = true;
-    supportedFilesystems = {
-      btrfs = true;
-      zfs = false;
-      ntfs = true;
-      fat = true;
-    };
   };
 }
