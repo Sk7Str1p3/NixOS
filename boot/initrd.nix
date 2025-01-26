@@ -1,6 +1,7 @@
 {
   boot.initrd = {
     enable = true;
+    checkJournalingFS = true;
     availableKernelModules = [
       "xhci_pci"
       "ahci"
@@ -35,8 +36,14 @@
       ];
       mitigateDMAAttacks = true;
       devices = {
-        NixOS.device = "/dev/disk/by-uuid/db0200f2-fae6-483f-aff1-164cd2d17a0e";
+        NixOS = {
+          device = "/dev/disk/by-uuid/db0200f2-fae6-483f-aff1-164cd2d17a0e";
+          fallbackToPassword = false;
+        };
       };
+    };
+    systemd = {
+      
     };
   };
 }
