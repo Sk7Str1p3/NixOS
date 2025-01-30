@@ -37,6 +37,7 @@
   programs.fish.enable = true;
   programs.obs-studio.enable = true;
   users.users.Sk7Str1p3 = {
+    hashedPassword = "$y$j9T$uWq7PDLmdqjQmf4j8i85v1$cTuvGw3cZFKeUvhD65Mde6fiNuVypgy8cBp/BSBli4D";
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = ["wheel"];
