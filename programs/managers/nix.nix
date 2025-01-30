@@ -39,7 +39,6 @@
       substituters = [
         "https://nix-community.cachix.org/"
         "https://chaotic-nyx.cachix.org/"
-        "https://cache.nixos.org/"
         "https://lanzaboote.cachix.org/"
         "https://cache.garnix.io/"
         "https://nixos-cache-proxy.cofob.dev/"
