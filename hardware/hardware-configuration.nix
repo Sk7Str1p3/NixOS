@@ -5,58 +5,60 @@
   environment.etc."crypttab".text = ''
     HDD    	/dev/disk/by-partuuid/0b959419-c80e-41b7-b298-d666073d0a4f 	/etc/cryptsetup-keys.d/HDD.BEK 		bitlk,nofail
     WinWare	/dev/disk/by-partuuid/74e675f3-4eb2-4075-a56c-413091ce48bd	/etc/cryptsetup-keys.d/WinWare.BEK	bitlk,nofail
-    Windows	/dev/disk/by-partuuid/2ebfde02-9a3a-4e15-9afa-83f98cfb782c	/etc/cryptsetup-keys.d/Windows.BEK	bitlk,nofail
+#    Windows	/dev/disk/by-partuuid/2ebfde02-9a3a-4e15-9afa-83f98cfb782c	/etc/cryptsetup-keys.d/Windows.BEK	bitlk,nofail
     RaidSATA	/dev/disk/by-partuuid/b9888660-3e7a-4176-91b0-39857dae7900	/etc/cryptsetup-keys.d/RaidSATA.key
     RaidNVME	/dev/disk/by-partuuid/2dfb0f15-8490-4807-a542-ab6b895f2321	/etc/cryptsetup-keys.d/RaidNVME.key
   '';
 
-  fileSystems."/" = {
-    device = "/dev/mapper/NixOS";
-    fsType = "btrfs";
-    options = ["subvol=@" "compress=zstd"];
-  };
+  fileSystems = {
+    "/" = {
+      device = "/dev/mapper/NixOS";
+      fsType = "btrfs";
+      options = ["subvol=@" "compress=zstd"];
+    };
 
-  fileSystems."/nix/store" = {
-    device = "/dev/mapper/NixOS";
-    fsType = "btrfs";
-    options = ["subvol=@nix" "compress=zstd"];
-  };
+    "/nix/store" = {
+      device = "/dev/mapper/NixOS";
+      fsType = "btrfs";
+      options = ["subvol=@nix" "compress=zstd"];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/mapper/NixOS";
-    fsType = "btrfs";
-    options = ["subvol=@home" "compress=zstd"];
-  };
+    "/home" = {
+      device = "/dev/mapper/NixOS";
+      fsType = "btrfs";
+      options = ["subvol=@home" "compress=zstd"];
+    };
 
-  fileSystems."/.swapvol" = {
-    device = "/dev/mapper/NixOS";
-    fsType = "btrfs";
-    options = ["subvol=@swap" "compress=zstd"];
-  };
+    "/.swapvol" = {
+      device = "/dev/mapper/NixOS";
+      fsType = "btrfs";
+      options = ["subvol=@swap" "compress=zstd"];
+    };
 
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/B121-36EC";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
-  };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/B121-36EC";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
+    };
 
-  fileSystems."/media/HDD" = {
-    device = "/dev/mapper/HDD";
-    fsType = "ntfs";
-    options = ["nofail"];
-  };
-  fileSystems."/media/Windows" = {
-    device = "/dev/mapper/Windows";
-    fsType = "ntfs";
-  };
-  fileSystems."/media/WinWare" = {
-    device = "/dev/mapper/WinWare";
-    fsType = "ntfs";
-  };
-  fileSystems."/media/LinuxWare" = {
-    device = "/dev/mapper/RaidNVME";
-    fsType = "btrfs";
-    options = ["compress=zstd" "subvol=@"];
+    "/media/HDD" = {
+      device = "/dev/mapper/HDD";
+      fsType = "ntfs";
+      options = ["nofail"];
+    };
+/*    "/media/Windows" = {
+      device = "/dev/mapper/Windows";
+      fsType = "ntfs";
+    };*/
+    "/media/WinWare" = {
+      device = "/dev/mapper/WinWare";
+      fsType = "ntfs";
+    };
+    "/media/LinuxWare" = {
+      device = "/dev/mapper/RaidNVME";
+      fsType = "btrfs";
+      options = ["compress=zstd" "subvol=@"];
+    };
   };
 
   swapDevices = [
