@@ -9,6 +9,6 @@
       "quiet"
       "splash"
     ];
-    #kernelPackages = pkgs.linux;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }
