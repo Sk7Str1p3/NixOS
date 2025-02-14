@@ -15,6 +15,14 @@
   appstream.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.gamescope.enable = true;
+  programs.gamemode.enable = true;
+  programs.steam = {
+    enable = true;
+    extest.enable = true;
+    protontricks.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
@@ -80,6 +88,8 @@
   };
 
   services.fwupd.enable = true;
+  services.resolved.enable = true;
+  virtualisation.vmware.host.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
